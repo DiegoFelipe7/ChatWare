@@ -1,0 +1,43 @@
+<p-dialog
+  header="Términos y Condiciones que Respetan los Derechos de los Usuarios:"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  (onHide)="closeModal()"
+>
+  <h3>Privacidad y Seguridad de Datos::</h3>
+  <ul>
+    <li>
+      Respetamos su privacidad y protegeremos sus datos personales de acuerdo
+      con las leyes aplicables.
+    </li>
+    <li>
+      No compartiremos, venderemos ni intercambiaremos su información personal
+      sin su consentimiento explícito.
+    </li>
+  </ul>
+
+  <h3>Transparencia y Comunicación::</h3>
+  <ul>
+    <li>
+      Le notificaremos sobre cualquier cambio en estos términos y condiciones
+      con anticipación y le daremos la oportunidad de revisar y aceptar los
+      cambios.
+    </li>
+    <li>
+      Estamos comprometidos a proporcionar una comunicación clara y accesible
+      para responder a sus preguntas y preocupaciones.
+    </li>
+  </ul>
+
+  <h3>Responsabilidad y Protección del Usuario::</h3>
+  <ul>
+    <li>
+      Nos comprometemos a proteger su información y a tomar medidas para evitar
+      pérdidas, robos o acceso no autorizado.
+    </li>
+    <li>Estamos aquí para brindarle un servicio seguro y confiable.</li>
+  </ul>
+</p-dialog>

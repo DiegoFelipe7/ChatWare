@@ -1,0 +1,42 @@
+<p-dialog
+  header="Términos y Condiciones que Violan los Derechos de los Usuarios"
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '50vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="true"
+  (onHide)="closeModal()"
+>
+  <h3>Uso de Datos de Usuario:</h3>
+  <ul>
+    <li>
+      Nos reservamos el derecho de vender, compartir o intercambiar su
+      información personal con terceros sin su consentimiento.
+    </li>
+    <li>
+      Podemos utilizar sus datos personales para fines no especificados sin
+      previo aviso.
+    </li>
+  </ul>
+
+  <h3>Privacidad:</h3>
+  <ul>
+    <li>
+      No garantizamos la privacidad de sus datos personales y no asumimos
+      ninguna responsabilidad en caso de pérdida, robo o acceso no autorizado.
+    </li>
+  </ul>
+
+  <h3>Modificaciones Arbitrarias:</h3>
+  <ul>
+    <li>
+      Podemos cambiar estos términos en cualquier momento sin previo aviso y sin
+      su consentimiento.
+    </li>
+    <li>
+      No asumimos ninguna responsabilidad por cualquier inconveniente causado
+      por dichos cambios.
+    </li>
+  </ul>
+</p-dialog>

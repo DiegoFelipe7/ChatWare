@@ -1,0 +1,114 @@
+<main class="form">
+  <p-tabMenu [model]="items"></p-tabMenu>
+  <form autocomplete="off" [formGroup]="formSingUp">
+    <h1>Bienvenido</h1>
+    <p class="text-gray">Ingresa todos los campos para completar tu registro</p>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="name" class="font-bold text-1xl">Nombre</label>
+      <input
+        pInputText
+        id="name"
+        aria-describedby="username-help"
+        formControlName="name"
+      />
+      <small style="color: red" *ngIf="validateInputs('name', 'required')"
+        >El nombre es requerido.</small
+      >
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="lastName" class="font-bold text-1xl">Apellido</label>
+      <input
+        pInputText
+        id="lastName"
+        aria-describedby="username-help"
+        formControlName="lastName"
+      />
+      <small style="color: red" *ngIf="validateInputs('lastName', 'required')"
+        >El apellido es requerido.</small
+      >
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="email" class="font-bold text-1xl">Correo</label>
+      <input
+        pInputText
+        id="email"
+        aria-describedby="username-help"
+        formControlName="email"
+      />
+      <small style="color: red" *ngIf="validateInputs('email', 'required')"
+        >El correo es requerido.</small
+      >
+      <small style="color: red" *ngIf="validateInputs('email', 'email')"
+        >El correo electronico es invalido.</small
+      >
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="email" class="font-bold text-1xl">Contraseña</label>
+      <input
+        pInputText
+        id="password"
+        type="password"
+        aria-describedby="username-help"
+        formControlName="password"
+      />
+      <small style="color: red" *ngIf="validateInputs('password', 'required')"
+        >La contraseña es requerida.</small
+      >
+      <small style="color: red" *ngIf="validateInputs('password', 'minlength')"
+        >La contraseña debe tener 6 caracteres.</small
+      >
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="name" class="font-bold text-1xl">Telefóno</label>
+      <p-inputMask
+        mask="(999) 999-9999"
+        formControlName="phone"
+        [style]="{ width: '100%' }"
+        placeholder="(999) 999-9999"
+      ></p-inputMask>
+
+      <small style="color: red" *ngIf="validateInputs('phone', 'required')"
+        >El telefono es requerido.</small
+      >
+    </div>
+    <div class="flex flex-column gap-2 mb-3">
+      <label htmlFor="name" class="font-bold text-1xl">Dirreción</label>
+      <input
+        pInputText
+        id="address"
+        aria-describedby="username-help"
+        formControlName="address"
+      />
+      <small style="color: red" *ngIf="validateInputs('address', 'required')"
+        >La dirrecion es requerida.</small
+      >
+    </div>
+    <div class="flex flex-column mb-3">
+      <div class="flex text-center">
+        <p-inputSwitch
+          id="valid"
+          formControlName="valid"
+          aria-labelledby="switch2"
+        ></p-inputSwitch>
+        <span id="switch2"
+          >Al hacer clic en Registrarte, aceptas las Condiciones,<span
+            (click)="openModal()"
+            class="alert"
+          >
+            la Política de privacidad</span
+          >
+          y la Política de cookies</span
+        >
+      </div>
+      <small style="color: red" *ngIf="validateInputs('valid', 'required')"
+        >Accepta los terminos.</small
+      >
+    </div>
+    <p-button
+      label="Crear Cuenta"
+      (onClick)="save()"
+      [style]="{ width: '100%' }"
+    ></p-button>
+  </form>
+</main>
+<app-terms-one [visible]="visible" (close)="close()"></app-terms-one>
